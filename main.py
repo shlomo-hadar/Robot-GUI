@@ -1,6 +1,7 @@
 import tkinter as tk
 import cv2
 from PIL import ImageTk, Image
+import time
 
 # import imageio
 
@@ -62,13 +63,12 @@ EFrame.place(x=screen_width / 2, y=0, width=(screen_width / 2), height=screen_he
 
 cap = cv2.VideoCapture('shniki.mp4')
 lmain = tk.Label(NWFrame, width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
-
 lmain.pack()
 
 
 def video_stream():
     _, frame = cap.read()
-    frame = cv2.resize(frame, (960, 540), interpolation=cv2.INTER_AREA)
+    frame = cv2.resize(frame, (int(screen_width/2), int(screen_height/2)), interpolation=cv2.INTER_AREA)
     cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
     img = Image.fromarray(cv2image)
     imgtk = ImageTk.PhotoImage(image=img)
