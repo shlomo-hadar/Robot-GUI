@@ -3,6 +3,7 @@ import cv2
 from PIL import ImageTk, Image
 
 
+
 def video_stream():
     _, frame = cap.read()
     if _:
@@ -27,41 +28,6 @@ def video_stream2():
     SWFLabel.after(1, video_stream)
 
 
-# import imageio
-
-# def stream():
-#     try:
-#         image = video.get_next_data()
-#         frame_image = Image.fromarray(image)
-#         frame_image=ImageTk.PhotoImage(frame_image)
-#         l1.config(image=frame_image)
-#         l1.image = frame_image
-#         l1.after(delay, lambda: stream())
-#     except:
-#         video.close()
-#         return
-# ########### Main Program ############
-# root = Tk()
-# root.title('Robot Gui')
-# f1=Frame()
-# l1 = Label(f1)
-# l1.pack()
-# f1.pack()
-# video_name = "shniki.mp4"   #Image-path
-# video = imageio.get_reader(video_name)
-# delay = int(1000 / video.get_meta_data()['fps'])
-# stream()
-# root.mainloop()
-
-# ##########
-# import tkinter as tk
-#
-# root = tk.Tk()
-#
-# screen_width = root.winfo_screenwidth()
-# screen_height = root.winfo_screenheight()
-# print(str(screen_width)+"+"+str(screen_height))
-
 root = tk.Tk()
 
 root.title('Robot Gui')
@@ -84,7 +50,7 @@ cap = cv2.VideoCapture('shniki.mp4')
 NWFLabel = tk.Label(NWFrame, width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 NWFLabel.pack()
 
-# TODO verify ip address
+# TODO verify ip camera stream address
 cap2 = cv2.VideoCapture('rtsp://10.0.22.120:554')
 SWFLabel = tk.Label(SWFrame, bg="cyan", width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 SWFLabel.pack()
