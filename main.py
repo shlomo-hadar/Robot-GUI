@@ -1,28 +1,29 @@
 import tkinter as tk
 import cv2
 from PIL import ImageTk, Image
-import time
 
 
 def video_stream():
     _, frame = cap.read()
-    frame = cv2.resize(frame, (int(screen_width / 2), int(screen_height / 2)), interpolation=cv2.INTER_AREA)
-    cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-    img = Image.fromarray(cv2image)
-    imgtk = ImageTk.PhotoImage(image=img)
-    NWFLabel.imgtk = imgtk
-    NWFLabel.configure(image=imgtk)
+    if _:
+        frame = cv2.resize(frame, (int(screen_width / 2), int(screen_height / 2)), interpolation=cv2.INTER_AREA)
+        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+        img = Image.fromarray(cv2image)
+        imgtk = ImageTk.PhotoImage(image=img)
+        NWFLabel.imgtk = imgtk
+        NWFLabel.configure(image=imgtk)
     NWFLabel.after(1, video_stream2)
 
 
 def video_stream2():
     _, frame = cap2.read()
-    frame = cv2.resize(frame, (int(screen_width / 2), int(screen_height / 2)), interpolation=cv2.INTER_AREA)
-    cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-    img = Image.fromarray(cv2image)
-    imgtk = ImageTk.PhotoImage(image=img)
-    SWFLabel.imgtk = imgtk
-    SWFLabel.configure(image=imgtk)
+    if _:
+        frame = cv2.resize(frame, (int(screen_width / 2), int(screen_height / 2)), interpolation=cv2.INTER_AREA)
+        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+        img = Image.fromarray(cv2image)
+        imgtk = ImageTk.PhotoImage(image=img)
+        SWFLabel.imgtk = imgtk
+        SWFLabel.configure(image=imgtk)
     SWFLabel.after(1, video_stream)
 
 
@@ -83,7 +84,8 @@ cap = cv2.VideoCapture('shniki.mp4')
 NWFLabel = tk.Label(NWFrame, width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 NWFLabel.pack()
 
-cap2 = cv2.VideoCapture('WhatsApp Video 2021-03-01 at 13.37.13.mp4')
+# TODO verify ip address
+cap2 = cv2.VideoCapture('rtsp://10.0.22.120:554')
 SWFLabel = tk.Label(SWFrame, bg="cyan", width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 SWFLabel.pack()
 
