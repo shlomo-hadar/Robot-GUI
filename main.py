@@ -57,16 +57,19 @@ SWFrame.place(x=0, y=screen_height / 2, width=((screen_width / 2) - 1), height=(
 EFrame = tk.Frame(root, bg="gray24")
 EFrame.place(x=screen_width / 2, y=0, width=(screen_width / 2), height=screen_height)
 
+
+# TODO verify ip camera stream address
 cap = cv2.VideoCapture('shniki.mp4')
 NWFLabel = tk.Label(NWFrame, width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 NWFLabel.pack()
 
-# TODO verify ip camera stream address
-cap2 = cv2.VideoCapture('rtsp://10.0.22.120:554')
+
+# cap2 = cv2.VideoCapture('rtsp://10.0.22.120:554')
+cap2 = cv2.VideoCapture('WhatsApp Video 2021-03-01 at 13.37.13.mp4')
 SWFLabel = tk.Label(SWFrame, bg="gray24", width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 SWFLabel.pack()
 
-cap3 = cv2.VideoCapture('WhatsApp Video 2021-03-01 at 13.37.13.mp4')
+cap3 = cv2.VideoCapture('http://localhost:8080/stream?topic=/rviz1/camera1/image')
 EFLabel = tk.Label(EFrame, bg="gray24", width=int(screen_width / 2 - 1), height=int(screen_height))
 EFLabel.pack()
 
@@ -75,6 +78,6 @@ try:
 except cv2.error:
     print("shniki")
 finally:
-    print("The 'try except' is finished")
+    print("The 'try except' is finished \U0001F603")
 print("shniki")
 root.mainloop()
