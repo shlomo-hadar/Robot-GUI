@@ -16,16 +16,19 @@ also required are the following ros packages:
 	rviz_camera_stream (can be found at "https://github.com/lucasw/rviz_camera_stream")
 	web_video_server (can be found at "https://github.com/RobotWebTools/web_video_server")
 
-after you're all set up to launch the project you will need to open a terminal with three 
-windows
+after you're all set up to launch the project you have two options.
+1)after you are all set up open a terminal window and type ./file
 
-in the first you will launch the "roscore" command
+2) you will need to open a terminal with three windows
 
-in the second you will launch the command "~/catkin_ws$ roslaunch rviz_camera_stream demo.launch" (the command starts at the roslaunch)
+	a)in the first you will launch the "roscore" command
 
-in the third you will launch the command "~/catkin_ws$ rosrun web_video_server web_video_server" (the command starts at the rosrun)
+	b)in the second you will launch the command "~/catkin_ws$ roslaunch rviz_camera_stream 			demo.launch" (the command starts at the roslaunch)
+
+	c)in the third you will launch the command "~/catkin_ws$ rosrun web_video_server 			web_video_server" (the command starts at the rosrun)
+
+	at this point you can launch your python "main.py" to run the program
+
+© all the rights reserved to Kohelet.
 
 
-at this point you can launch your python "main.py"
-
-© all the rights reserved to Kohelet and stuff (JK use it how ever you want)
