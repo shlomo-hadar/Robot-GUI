@@ -1,6 +1,6 @@
 # Robot-GUI
 
-project was conducted on a system with OS ubuntu 20.04 and the noetic ros distrobution
+project was conducted on a system with an ubuntu 20.04 OS and the noetic ros distrobution
 
 required libraries in python:
     tkinter 
@@ -17,11 +17,12 @@ also required are the following ros packages:
 	web_video_server (can be found at "https://github.com/RobotWebTools/web_video_server")
 
 after you're all set up to launch the project you have two options.
-1)after you are all set up open a terminal window and type ./file
+1)after you are all set up open a terminal window and type ./doubleClickToRun.sh after you cd into the robotGui directory and make the file executable (chmod +x doubleClickToRun.sh)
+		alternative is to double click on the file doubleClickToRun.sh to run it if you follow the instructions in the following link. (https://askubuntu.com/questions/138908/how-to-execute-a-script-just-by-double-clicking-like-exe-files-in-windows)
 
 2) you will need to open a terminal with three windows
 
-	a)in the first you will launch the "roscore" command
+	a)in the first you will launch the "roscore" command (for ros master innitialization)
 
 	b)in the second you will launch the command "~/catkin_ws$ roslaunch rviz_camera_stream 			demo.launch" (the command starts at the roslaunch)
 

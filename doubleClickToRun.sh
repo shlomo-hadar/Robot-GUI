@@ -1,8 +1,15 @@
+#!/bin/bash
+cd ~/PycharmProjects/robotGUI
+
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+
 gnome-terminal -e "bash -c 'roscore;exec $SHELL'"
 sleep 3
 gnome-terminal -e "bash -c 'rosrun web_video_server web_video_server;exec $SHELL'"
 sleep 3
 gnome-terminal -e "bash -c 'roslaunch rviz_camera_stream demo.launch;exec $SHELL'"
 sleep 3
+gnome-terminal -e "bash -c 'xdotool key super+d;exec $SHELL'"
 gnome-terminal -e "bash -c 'python3 main.py;exec $SHELL'"
 
