@@ -41,6 +41,7 @@ def video_stream3():
 
 root = tk.Tk()
 
+
 root.title('Robot Gui')
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -58,7 +59,7 @@ EFrame = tk.Frame(root, bg="gray24")
 EFrame.place(x=screen_width / 2, y=0, width=(screen_width / 2), height=screen_height)
 
 
-# TODO verify ip camera stream address
+# TODO verify ip camera stream address in the VideoCapture function
 cap = cv2.VideoCapture('shniki.mp4')
 NWFLabel = tk.Label(NWFrame, width=int(screen_width / 2 - 1), height=int(screen_height / 2 - 1))
 NWFLabel.pack()
