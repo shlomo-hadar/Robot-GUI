@@ -14,6 +14,8 @@ required libraries in python:
 
 also required are the following ros packages:
 	rviz_camera_stream (can be found at "https://github.com/lucasw/rviz_camera_stream")
+		in the launch file adjust the tf third parameter for him to fit to your program.
+		(the value i found to fit best is -6.5)
 	web_video_server (can be found at "https://github.com/RobotWebTools/web_video_server")
 
 after you're all set up to launch the project you have two options.
